@@ -1,0 +1,289 @@
+/* Finished Time => 6H */
+/* ========== Start Variables ========== */
+:root {
+    /* ====== COLORS ====== */
+    --orange-color: #FF8B64;
+    --blue-color: #56C2E6;
+    --pink-color: #FF5E7D;
+    --yellow-color: #F1C75B ;
+    --green-color: #4BCF85 ;
+    --purple-color: #7333CF;
+    --light-purple-color: #5746EA;
+    --background-color: #0D1323;
+    --blue-background-color: #1D204B;
+    /* ====== FONTS COLORS ====== */
+    --light-white-color: #BDB3FF;
+    --white-color: #fff;
+    /* ====== ACCESS ====== */
+    --main-padding: 20px;
+    --main-border-radius: 30px;
+}
+/* ========== End Variables ========== */
+
+/* ========== Start Global Rules ========== */
+::-webkit-scrollbar {
+    width: 14px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgb(0, 117, 255);
+    border-radius: 2px;
+}
+::selection {
+    background-color: #31dcce;
+    color: #333;
+}
+::placeholder {
+    color: red;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Rubik', sans-serif;
+    background: var(--background-color);
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}   
+/* === Small === */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+        margin: auto;
+    }
+}
+/* === Medium === */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+        margin: auto;
+    }
+}
+/* === Large === */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+        margin: auto;
+    }
+} 
+/* ========== End Global Rules ========== */
+
+/* ========== Start Tracking Template ========== */
+.tracking {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--background-color);
+    position: relative;
+}
+.tracking .container {
+    height: 550px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    display: flex;
+    border-radius: var(--main-border-radius);
+}
+@media (max-width: 1250px) {
+    .tracking .container {
+        flex-direction: column;
+        gap: 30px;
+        height: 100%;
+        padding-top: 10px;
+    }
+    @media (max-width: 767px) {
+        .tracking .container {
+            width: 100%;
+            padding: 100px 20px;
+        }
+    }
+}
+/* === Main Person === */
+.tracking .container .main-person {
+    width: 270px;
+    height: 100%;
+    background: var(--blue-background-color);
+    border-radius: var(--main-border-radius);
+}
+@media (max-width: 1250px) {
+    .tracking .container .main-person {
+        width: 100%;
+        height: 200px;
+    }
+}
+/* == Above-content == */
+.tracking .container .main-person .above-content {
+    padding: var(--main-padding);
+    height: 70%;
+    background: var(--light-purple-color);
+    border-radius: var(--main-border-radius);
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+/* = img = */
+.tracking .container .main-person .above-content .img {
+    width: 70px;
+    border-radius: 50%;
+}
+.tracking .container .main-person .above-content .img img {
+    max-width: 100%;
+    max-height: 100%;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+/* = text = */
+.tracking .container .main-person .above-content h4 {
+    color: var(--light-white-color);
+    font-size: 20px;
+    font-weight: normal;
+}
+.tracking .container .main-person .above-content h1 {
+    margin: 20px 0 0;
+    color: var(--white-color);
+    font-weight: normal;
+    font-size: 45px;
+}
+@media (max-width: 600px) {
+    .tracking .container .main-person .above-content h1 {
+        font-size: 30px;
+    }
+}
+/* == Lower-content == */
+.tracking .container .main-person .lower-content {
+    padding: var(--main-padding);
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+@media (max-width: 1250px) {
+    .tracking .container .main-person .above-content {
+        flex-direction: row;
+    }
+    .tracking .container .main-person .lower-content {
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
+}
+.tracking .container .main-person .lower-content h3 {
+    color: var(--light-white-color);
+    font-weight: normal;
+}
+.tracking .container .main-person .lower-content h3:nth-child(2){
+    color: var(--white-color);
+}
+/* === Time Tracking Boxs === */
+.tracking .container .boxs {
+    margin-left: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+}
+/* ==== Blocks ==== */
+.tracking .container .boxs .above-block,
+.tracking .container .boxs .lower-block {
+    display: flex;
+    height: 50%;
+    gap: 30px;
+}
+.tracking .container .box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 270px;
+    border-radius: var(--main-border-radius);
+}
+@media (max-width: 1250px) {
+    .tracking .container .boxs {
+        margin: 0;
+        padding-bottom: 10px;
+    }
+    .tracking .container .box {
+        width: 100%;
+    }
+    @media (max-width: 768px) {
+        .tracking .container .boxs .above-block,
+        .tracking .container .boxs .lower-block {
+            flex-direction: column;
+        }
+        .tracking .container .boxs {
+            width: 100%;
+            padding-bottom: 100px;
+        }
+    }
+}
+.tracking .container .box1 {
+    background: var(--orange-color);
+}
+.tracking .container .box2 {
+    background: var(--blue-color);
+}
+.tracking .container .box3 {
+    background: var(--pink-color);
+}
+.tracking .container .box4 {
+    background: var(--green-color);
+}
+.tracking .container .box5 {
+    background: var(--purple-color);
+}
+.tracking .container .box6 {
+    background: var(--yellow-color);
+}
+/* == Icon == */
+.tracking .container .box .icon {
+    height: 20%;
+    text-align: end;
+    padding: 0 var(--main-padding);
+}
+/* == Content == */
+.tracking .container .box .content {
+    height: 80%;
+    background-color: var(--blue-background-color);
+    border-radius: var(--main-border-radius);
+    padding: var(--main-padding);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+} 
+/* = Above Content = */
+.tracking .container .box .content .above-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tracking .container .box .content .above-content h3 {
+    font-size: 25px;
+    font-weight: normal;
+}
+
+/* = Middle Content = */
+.tracking .container .box .content .middle-content H1 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 50px;
+}
+/* = Lower Content = */
+.tracking .container .box .content .lower-content h4 {
+    font-weight: normal;
+    color: var(--light-white-color);
+}
+/* ========== End Tracking Template ========== */
